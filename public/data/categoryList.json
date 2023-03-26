@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "category": "로맨스",
+    "list": [
+      {
+        "id": 1,
+        "title": "주술회전",
+        "writer": "아쿠타미 게게",
+        "rating": 4.9
+      },
+      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 3,
+        "title": "진격의 거인",
+        "writer": "이사야마 하지메",
+        "rating": 4.7
+      },
+      {
+        "id": 4,
+        "title": "도쿄 구울",
+        "writer": "이시다 스이",
+        "rating": 4.9,
+        "age": 19
+      },
+      {
+        "id": 5,
+        "title": "체인소 맨",
+        "writer": "후지모토 타츠키",
+        "rating": 4.8,
+        "age": 19
+      },
+      { "id": 6, "title": "은혼", "writer": "소라치 히데야키", "rating": 4.9 },
+      {
+        "id": 7,
+        "title": "명탐정 코난",
+        "writer": "아오야마 고쇼",
+        "rating": 4.7
+      },
+      {
+        "id": 8,
+        "title": "데스노트",
+        "writer": "오바 츠구미, 오바타 타케시",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "category": "액션",
+    "list": [
+      {
+        "id": 1,
+        "title": "주술회전",
+        "writer": "아쿠타미 게게",
+        "rating": 4.9
+      },
+      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 3,
+        "title": "진격의 거인",
+        "writer": "이사야마 하지메",
+        "rating": 4.7
+      },
+      {
+        "id": 4,
+        "title": "도쿄 구울",
+        "writer": "이시다 스이",
+        "rating": 4.9,
+        "age": 19
+      },
+      {
+        "id": 5,
+        "title": "체인소 맨",
+        "writer": "후지모토 타츠키",
+        "rating": 4.8,
+        "age": "19"
+      },
+      { "id": 6, "title": "은혼", "writer": "소라치 히데야키", "rating": 4.9 },
+      {
+        "id": 7,
+        "title": "명탐정 코난",
+        "writer": "아오야마 고쇼",
+        "rating": 4.7
+      },
+      {
+        "id": 8,
+        "title": "데스노트",
+        "writer": "오바 츠구미, 오바타 타케시",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "category": "코믹",
+    "list": [
+      {
+        "id": 1,
+        "title": "주술회전",
+        "writer": "아쿠타미 게게",
+        "rating": 4.9
+      },
+      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 3,
+        "title": "진격의 거인",
+        "writer": "이사야마 하지메",
+        "rating": 4.7
+      },
+      {
+        "id": 4,
+        "title": "도쿄 구울",
+        "writer": "이시다 스이",
+        "rating": 4.9,
+        "age": 19
+      },
+      {
+        "id": 5,
+        "title": "체인소 맨",
+        "writer": "후지모토 타츠키",
+        "rating": 4.8,
+        "age": "19"
+      },
+      { "id": 6, "title": "은혼", "writer": "소라치 히데야키", "rating": 4.9 },
+      {
+        "id": 7,
+        "title": "명탐정 코난",
+        "writer": "아오야마 고쇼",
+        "rating": 4.7
+      },
+      {
+        "id": 8,
+        "title": "데스노트",
+        "writer": "오바 츠구미, 오바타 타케시",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "category": "판타지/SF",
+    "list": [
+      {
+        "id": 1,
+        "title": "주술회전",
+        "writer": "아쿠타미 게게",
+        "rating": 4.9
+      },
+      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 3,
+        "title": "진격의 거인",
+        "writer": "이사야마 하지메",
+        "rating": 4.7
+      },
+      {
+        "id": 4,
+        "title": "도쿄 구울",
+        "writer": "이시다 스이",
+        "rating": 4.9,
+        "age": 19
+      },
+      {
+        "id": 5,
+        "title": "체인소 맨",
+        "writer": "후지모토 타츠키",
+        "rating": 4.8,
+        "age": "19"
+      },
+      { "id": 6, "title": "은혼", "writer": "소라치 히데야키", "rating": 4.9 },
+      {
+        "id": 7,
+        "title": "명탐정 코난",
+        "writer": "아오야마 고쇼",
+        "rating": 4.7
+      },
+      {
+        "id": 8,
+        "title": "데스노트",
+        "writer": "오바 츠구미, 오바타 타케시",
+        "rating": 4.8
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "category": "성인",
+    "list": [
+      {
+        "id": 1,
+        "title": "주술회전",
+        "writer": "아쿠타미 게게",
+        "rating": 4.9
+      },
+      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 3,
+        "title": "진격의 거인",
+        "writer": "이사야마 하지메",
+        "rating": 4.7
+      },
+      {
+        "id": 4,
+        "title": "도쿄 구울",
+        "writer": "이시다 스이",
+        "rating": 4.9,
+        "age": 19
+      }
+    ]
+  }
+]
