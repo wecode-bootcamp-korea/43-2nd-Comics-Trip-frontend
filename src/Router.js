@@ -5,6 +5,7 @@ import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import BookCase from './pages/BookCase/BookCase';
+import KakaoAuth from './components/Login/KakaoAuth';
 
 const Router = () => {
   return (
@@ -12,7 +13,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/productdetail/:id" element={<ProductDetail />} />
+        <Route path="/productdetail" element={<ProductDetail />} />
         <Route path="/bookcase" element={<BookCase />} />
       </Routes>
       <Footer />
