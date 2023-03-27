@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "img": "./images/Nav/profile.png",
+    "message": "쿠폰이 발급되었습니다."
+  },
+  {
+    "id": 2,
+    "img": "./images/Nav/profile.png",
+    "message": "쿠폰이 발급되었습니다."
+  },
+  {
+    "id": 3,
+    "img": "./images/Nav/profile.png",
+    "message": "쿠폰이 발급되었습니다."
+  }
+]
