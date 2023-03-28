@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "genres": "코믹, 판타지/SF",
+      "title": "배구보는 솜솜이",
+      "image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+      "author": "나야나",
+      "publisher": "리디진짜이럴래",
+      "bookRate": "3.5000",
+      "single_volume_number": "2",
+      "single_volumes": [
+        {
+          "id": 1,
+          "name": "1권",
+          "sequence": 1,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#1",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 200
+        },
+        {
+          "id": 2,
+          "name": "2권",
+          "sequence": 2,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#1",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 208
+        },
+        {
+          "id": 3,
+          "name": "3권",
+          "sequence": 3,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 196
+        },
+        {
+          "id": 4,
+          "name": "4권",
+          "sequence": 4,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 190
+        },
+        {
+          "id": 5,
+          "name": "5권",
+          "sequence": 5,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 190
+        },
+        {
+          "id": 6,
+          "name": "6권",
+          "sequence": 6,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 210
+        },
+        {
+          "id": 7,
+          "name": "7권",
+          "sequence": 7,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 210
+        },
+        {
+          "id": 8,
+          "name": "8권",
+          "sequence": 8,
+          "book_image": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "discount_owner_price": "2700",
+          "discount": 10,
+          "owner_price": "3000",
+          "rental_price": "1500",
+          "published_date": "2023-03-29",
+          "single_volume_pages": 210
+        }
+      ]
+    }
+  ]
+}
