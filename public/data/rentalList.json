@@ -1,0 +1,22 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "sequence": 1,
+      "book_image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1",
+      "book_id": 1
+    },
+    {
+      "id": 6,
+      "sequence": 2,
+      "book_image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+      "book_id": 1
+    },
+    {
+      "id": 2,
+      "sequence": 1,
+      "book_image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#2",
+      "book_id": 3
+    }
+  ]
+}

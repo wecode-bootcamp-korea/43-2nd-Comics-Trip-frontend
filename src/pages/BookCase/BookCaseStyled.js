@@ -113,6 +113,7 @@ export const OrderList = styled.ul`
 `;
 
 export const ImgLi = styled.li`
+  position: relative;
   width: 137.5px;
   height: 200px;
   margin: 24px 12px 0 12px;
@@ -123,8 +124,67 @@ export const ImgLi = styled.li`
   }
 `;
 
+export const Count = styled.div`
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 45%;
+  height: 26px;
+  background-color: black;
+  outline: 1px solid #fff;
+  outline-offset: -3px;
+  border-radius: 50px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 26px;
+  color: #fff;
+`;
+
+export const CountDownWrap = styled.div`
+  position: absolute;
+  top: 0;
+  width: 137.5px;
+  height: 200px;
+  display: none;
+`;
+
+export const CountDown = styled(Count)`
+  width: 80%;
+  height: 23px;
+  background-color: #fff;
+  outline: none;
+  border-radius: 7px;
+  line-height: 23px;
+  color: #4e4e4e;
+`;
+
+export const RentImgLi = styled(ImgLi)`
+  &:hover {
+    ${CountDownWrap} {
+      display: block;
+      background-color: #444444cf;
+    }
+  }
+`;
+
 export const Img = styled.img`
   width: 137.5px;
   height: 200px;
   object-fit: cover;
+`;
+
+export const Sequence = styled.span`
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  background-color: #38b5ff;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
 `;
