@@ -3,6 +3,8 @@ import Slider from 'react-slick';
 import Category from '../../components/Category/Category';
 import Mari from '../../assets/images/IMG_1211.JPG';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
@@ -11,13 +13,15 @@ const Main = () => {
   const [categoryData, setCategoryData] = useState([]);
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     rows: 3,
     arrow: true,
     draggable: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
   };
 
   const elementScroll = useRef([]);
@@ -45,7 +49,7 @@ const Main = () => {
 
   return (
     <>
-      <Div>
+      <BestList>
         <Best>베스트</Best>
         <StyledSlider {...settings}>
           {rankingData.map(({ id, title, writer, rating, age }) => {
@@ -56,13 +60,16 @@ const Main = () => {
                 <Column>
                   <Title>{title}</Title>
                   <Writer>{writer}</Writer>
-                  <Rating>{rating}</Rating>
+                  <Rating>
+                    <FontAwesomeIcon icon={faStar} size="xs" />
+                    {rating}
+                  </Rating>
                 </Column>
               </Slide>
             );
           })}
         </StyledSlider>
-      </Div>
+      </BestList>
       <WindowScroll>
         {categoryData.map(({ id, category }, index) => {
           return (
@@ -79,9 +86,34 @@ const Main = () => {
         setData={setCategoryData}
         scroll={elementScroll}
       />
+      <ScrollTop
+        onClick={() => {
+          window.scrollTo({ top: 0, screenLeft: 0, behavior: 'smooth' });
+        }}
+      >
+        <FontAwesomeIcon icon={faChevronUp} /> TOP
+      </ScrollTop>
     </>
   );
 };
+
+const ScrollTop = styled.button`
+  background-color: white;
+  width: 83px;
+  padding: 10px 0;
+  margin-left: 91%;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  position: sticky;
+  bottom: 40px;
+  &: hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6px #adadad;
+  }
+  &: active {
+    box-shadow: inset 0px 3px 6px #adadad;
+  }
+`;
 
 const Best = styled.strong`
   font-size: 22px;
@@ -105,10 +137,10 @@ const ScrollButton = styled.button`
   cursor: pointer;
 `;
 
-const Div = styled.div`
+const BestList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 58%;
+  width: 1150px;
   margin: 100px auto;
 `;
 
@@ -124,8 +156,8 @@ const StyledSlider = styled(Slider)`
   .slick-prev::before,
   .slick-next::before {
     font-size: 30px;
-    opacity: 0.75;
-    color: black;
+    opacity: 1;
+    color: #38b5ff;
   }
 `;
 
@@ -133,17 +165,25 @@ const Slide = styled.button`
   display: flex !important;
   align-items: center;
   border: 0;
-  cursor: pointer;
+  border-radius: 5px;
   background-color: white;
+  &: hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6px #adadad;
+  }
+  &: active {
+    box-shadow: inset 0px 3px 6px #adadad;
+  }
 `;
 
 const RankingListImg = styled.img`
-  width: 34%;
+  width: 25%;
   height: 114px;
+  border-radius: 4px;
 `;
 
 const RankingListId = styled.div`
-  width: 33%;
+  width: 25%;
   height: 114px;
   display: flex;
   align-items: center;
@@ -154,7 +194,7 @@ const Column = styled.div`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  width: 33%;
+  width: 50%;
 `;
 const Title = styled.div`
   font-size: 16px;
@@ -166,6 +206,7 @@ const Writer = styled.div`
 `;
 const Rating = styled.div`
   font-size: 13px;
+  color: #fa722d;
 `;
 
 export default Main;
