@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import Category from '../../components/Category/Category';
 import Mari from '../../assets/images/IMG_1211.JPG';
@@ -11,6 +12,8 @@ import 'slick-carousel/slick/slick-theme.css';
 const Main = () => {
   const [rankingData, setRankingData] = useState([]);
   const [categoryData, setCategoryData] = useState([]);
+
+  const [loading, setLoading] = useState(true);
   const settings = {
     dots: true,
     infinite: true,
@@ -19,10 +22,11 @@ const Main = () => {
     slidesToScroll: 1,
     rows: 3,
     arrow: true,
-    draggable: true,
     autoplay: true,
     autoplaySpeed: 4000,
   };
+
+  const navigate = useNavigate();
 
   const elementScroll = useRef([]);
 
@@ -32,50 +36,61 @@ const Main = () => {
   };
 
   useEffect(() => {
-    fetch('/data/rankingList.json')
+    fetch('http://10.58.52.95:3001/books/best')
       .then(res => res.json())
       .then(data => {
         setRankingData(data);
+        setLoading(false);
       });
   }, []);
 
   useEffect(() => {
-    fetch('/data/categoryList.json')
+    fetch(`http://10.58.52.95:3001/books/genre`)
       .then(res => res.json())
       .then(data => {
         setCategoryData(data);
+        setLoading(false);
       });
   }, []);
+
+  if (loading) return <div>loading...</div>;
 
   return (
     <>
       <BestList>
         <Best>베스트</Best>
         <StyledSlider {...settings}>
-          {rankingData.map(({ id, title, writer, rating, age }) => {
-            return (
-              <Slide key={id}>
-                <RankingListImg src={Mari} />
-                <RankingListId>{id}</RankingListId>
-                <Column>
-                  <Title>{title}</Title>
-                  <Writer>{writer}</Writer>
-                  <Rating>
-                    <FontAwesomeIcon icon={faStar} size="xs" />
-                    {rating}
-                  </Rating>
-                </Column>
-              </Slide>
-            );
-          })}
+          {rankingData.map(
+            ({ id, title, author, avgRating, book_image }, index) => {
+              return (
+                <Slide
+                  onClick={() => {
+                    navigate(`/productdetail/${id}`);
+                  }}
+                  key={id}
+                >
+                  <RankingListImg src={book_image} />
+                  <RankingListId>{index + 1}</RankingListId>
+                  <Column>
+                    <Title>{title}</Title>
+                    <Writer>{author}</Writer>
+                    <Rating>
+                      <FontAwesomeIcon icon={faStar} size="xs" />
+                      {parseInt(avgRating)}
+                    </Rating>
+                  </Column>
+                </Slide>
+              );
+            }
+          )}
         </StyledSlider>
       </BestList>
       <WindowScroll>
-        {categoryData.map(({ id, category }, index) => {
+        {categoryData.map(({ id, genre }, index) => {
           return (
             <li key={id}>
               <ScrollButton onClick={() => scrollToCategory(index)}>
-                {category}
+                {genre}
               </ScrollButton>
             </li>
           );
@@ -85,6 +100,7 @@ const Main = () => {
         data={categoryData}
         setData={setCategoryData}
         scroll={elementScroll}
+        navigate={navigate}
       />
       <ScrollTop
         onClick={() => {
@@ -101,7 +117,7 @@ const ScrollTop = styled.button`
   background-color: white;
   width: 83px;
   padding: 10px 0;
-  margin-left: 91%;
+  margin-left: 90%;
   border: 1px solid #fff;
   border-radius: 15px;
   position: sticky;
@@ -197,6 +213,7 @@ const Column = styled.div`
   width: 50%;
 `;
 const Title = styled.div`
+  text-align: start;
   font-size: 16px;
 `;
 const Writer = styled.div`
