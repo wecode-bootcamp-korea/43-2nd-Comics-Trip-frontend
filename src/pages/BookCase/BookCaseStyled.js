@@ -98,7 +98,6 @@ export const Section = styled.section`
 `;
 
 export const SectionTitle = styled.h3`
-  height: 23px;
   font-size: 16px;
   font-weight: 700;
   color: #40474d;
@@ -108,7 +107,7 @@ export const OrderList = styled.ul`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  height: 224px;
+  //height: 224px;
   box-shadow: -35px 70px 85px -80px #d1d5d9;
 `;
 
@@ -116,7 +115,7 @@ export const ImgLi = styled.li`
   position: relative;
   width: 137.5px;
   height: 200px;
-  margin: 24px 12px 0 12px;
+  margin: 40px 12px 0 12px;
 
   &:hover {
     cursor: pointer;
@@ -147,16 +146,6 @@ export const CountDownWrap = styled.div`
   width: 137.5px;
   height: 200px;
   display: none;
-`;
-
-export const CountDown = styled(Count)`
-  width: 80%;
-  height: 23px;
-  background-color: #fff;
-  outline: none;
-  border-radius: 7px;
-  line-height: 23px;
-  color: #4e4e4e;
 `;
 
 export const RentImgLi = styled(ImgLi)`
