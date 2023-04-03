@@ -166,7 +166,7 @@
         "title": "체인소 맨",
         "writer": "후지모토 타츠키",
         "rating": 4.8,
-        "age": "19"
+        "age": 19
       },
       { "id": 6, "title": "은혼", "writer": "소라치 히데야키", "rating": 4.9 },
       {
@@ -191,14 +191,22 @@
         "id": 1,
         "title": "주술회전",
         "writer": "아쿠타미 게게",
-        "rating": 4.9
+        "rating": 4.9,
+        "age": 19
       },
-      { "id": 2, "title": "원피스", "writer": "오다 에이치로", "rating": 4.7 },
+      {
+        "id": 2,
+        "title": "원피스",
+        "writer": "오다 에이치로",
+        "rating": 4.7,
+        "age": 19
+      },
       {
         "id": 3,
         "title": "진격의 거인",
         "writer": "이사야마 하지메",
-        "rating": 4.7
+        "rating": 4.7,
+        "age": 19
       },
       {
         "id": 4,

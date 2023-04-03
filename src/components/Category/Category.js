@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import Mari from '../../assets/images/IMG_1211.JPG';
-import CuteMari from '../../assets/images/IMG_1057.JPG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-const Category = ({ data, setData, scroll }) => {
+const Category = ({ data, setData, scroll, navigate }) => {
   const seeMore = categoryId => {
     setData(
       data.map(category => {
@@ -19,21 +17,28 @@ const Category = ({ data, setData, scroll }) => {
 
   return (
     <CategoryBox>
-      {data.map(({ id, category, list, isOpened }, index) => {
-        const newList = list.slice(0, 6);
-        const moreList = list.slice(6);
+      {data.map(({ id, genre, book_list, isOpened }, index) => {
+        const newList = book_list.slice(0, 6);
+        const moreList = book_list.slice(6);
+
         return (
           <Column key={id}>
             <CategoryTitle ref={element => (scroll.current[index] = element)}>
-              {category}
+              {genre}
             </CategoryTitle>
             <CategoryList>
-              {newList.map(({ id, title, writer, rating }) => {
+              {newList.map(({ id, title, author, rating, book_image }) => {
                 return (
-                  <ListInfo key={id}>
-                    <CategoryListImg src={CuteMari} />
+                  <ListInfo
+                    id={title}
+                    key={id}
+                    onClick={() => {
+                      navigate(`/productdetail/${id}`);
+                    }}
+                  >
+                    <CategoryListImg id={genre} src={book_image} />
                     <Title>{title}</Title>
-                    <Writer>{writer}</Writer>
+                    <Writer>{author}</Writer>
                     <Rating>
                       <FontAwesomeIcon icon={faStar} size="xs" />
                       {rating}
@@ -44,12 +49,17 @@ const Category = ({ data, setData, scroll }) => {
             </CategoryList>
             <CategoryList>
               {isOpened &&
-                moreList.map(({ id, title, writer, rating }) => {
+                moreList.map(({ id, title, author, rating, book_image }) => {
                   return (
-                    <ListInfo key={id}>
-                      <CategoryListImg src={Mari} />
+                    <ListInfo
+                      key={id}
+                      onClick={() => {
+                        navigate(`/productdetail/${id}`);
+                      }}
+                    >
+                      <CategoryListImg id={genre} src={book_image} />
                       <Title>{title}</Title>
-                      <Writer>{writer}</Writer>
+                      <Writer>{author}</Writer>
                       <Rating>
                         <FontAwesomeIcon icon={faStar} size="xs" />
                         {rating}
@@ -58,7 +68,7 @@ const Category = ({ data, setData, scroll }) => {
                   );
                 })}
             </CategoryList>
-            {newList.length > 5 && (
+            {book_list.length > 6 && (
               <SeeMoreButton onClick={() => seeMore(id)}>
                 {isOpened ? '접기▲' : '더보기+'}
               </SeeMoreButton>
@@ -129,6 +139,7 @@ const CategoryListImg = styled.img`
   width: 180px;
   height: 261px;
   border-radius: 4px;
+  filter: ${props => (props.id === '성인' ? 'blur(4px)' : '')};
 `;
 
 const CategoryList = styled.div`
