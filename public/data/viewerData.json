@@ -1,0 +1,87 @@
+{
+  "data": [
+    {
+      "book_id": 1,
+      "title": "진격거",
+      "author": "aaaaaa",
+      "publisher": "리디1",
+      "volumes": [
+        {
+          "name": "1권",
+          "pages": [
+            {
+              "id": 1,
+              "name": "1화",
+              "sequence": 1,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 2,
+
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 3,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 4,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 5,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 6,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            },
+            {
+              "id": 7,
+              "name": "2화",
+              "sequence": 2,
+              "image_url": "fafsf.jpg"
+            },
+            {
+              "id": 8,
+              "name": "3화",
+              "sequence": 3,
+              "image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1"
+            }
+          ],
+          "sequence": 1,
+          "book_image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#1",
+          "single_volumes_id": 1,
+          "single_volume_page_count": 8
+        },
+        {
+          "name": "2권",
+          "pages": [
+            {
+              "id": 1,
+              "name": "1화",
+              "sequence": 1,
+              "image_url": "fdfdf.jpg"
+            },
+            {
+              "id": 2,
+              "name": "2화",
+              "sequence": 2,
+              "image_url": "fafsf.jpg"
+            },
+            {
+              "id": 3,
+              "name": "3화",
+              "sequence": 3,
+              "image_url": "aaaaa.jpg"
+            }
+          ],
+          "sequence": 2,
+          "book_image_url": "https://img.ridicdn.net/cover/1019078320/xxlarge#6",
+          "single_volumes_id": 6,
+          "single_volume_page_count": 3
+        }
+      ]
+    }
+  ]
+}
