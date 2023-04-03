@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Mari from '../../assets/images/IMG_1211.JPG';
 import CuteMari from '../../assets/images/IMG_1057.JPG';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 const Category = ({ data, setData, scroll }) => {
   const seeMore = categoryId => {
@@ -32,7 +34,10 @@ const Category = ({ data, setData, scroll }) => {
                     <CategoryListImg src={CuteMari} />
                     <Title>{title}</Title>
                     <Writer>{writer}</Writer>
-                    <Rating>{rating}</Rating>
+                    <Rating>
+                      <FontAwesomeIcon icon={faStar} size="xs" />
+                      {rating}
+                    </Rating>
                   </ListInfo>
                 );
               })}
@@ -45,7 +50,10 @@ const Category = ({ data, setData, scroll }) => {
                       <CategoryListImg src={Mari} />
                       <Title>{title}</Title>
                       <Writer>{writer}</Writer>
-                      <Rating>{rating}</Rating>
+                      <Rating>
+                        <FontAwesomeIcon icon={faStar} size="xs" />
+                        {rating}
+                      </Rating>
                     </ListInfo>
                   );
                 })}
@@ -72,11 +80,21 @@ const Column = styled.div`
 
 const ListInfo = styled.div`
   margin: 0 5px;
+  border: 0;
+  border-radius: 5px;
+
+  &: hover {
+    cursor: pointer;
+    box-shadow: 0px 3px 6px #adadad;
+  }
+  &: active {
+    box-shadow: inset 0px 3px 6px #adadad;
+  }
 `;
 const SeeMoreButton = styled.button`
   width: 70px;
   cursor: pointer;
-  margin: auto;
+  margin: 0 auto 20px;
   color: #38b5ff;
   background-color: white;
   border: 1px solid #38b5ff;
@@ -95,6 +113,7 @@ const Writer = styled.div`
 `;
 const Rating = styled.div`
   font-size: 13px;
+  color: #fa722d;
 `;
 
 const CategoryBox = styled.div`
@@ -102,15 +121,17 @@ const CategoryBox = styled.div`
   margin: auto;
 `;
 const CategoryTitle = styled.div`
+  margin: 0 0 0 5px;
   font-size: 22px;
 `;
 
 const CategoryListImg = styled.img`
   width: 180px;
   height: 261px;
+  border-radius: 4px;
 `;
 
 const CategoryList = styled.div`
   display: flex;
-  margin: 20px 0;
+  margin: 5px 0;
 `;
