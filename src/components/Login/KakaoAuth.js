@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { APIS } from '../../config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styled, { keyframes } from 'styled-components';
@@ -20,7 +21,7 @@ const KakaoAuth = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        fetch('http://10.58.52.95:3001/users/kakao', {
+        fetch(APIS.login, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json;charset=utf-8',

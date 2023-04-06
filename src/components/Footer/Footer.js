@@ -27,14 +27,14 @@ const Footer = () => {
 };
 
 const FooterWrapper = styled.div`
-  border-top: 1px solid black;
-  width: 100%;
-  height: 400px;
-  position: absolute;
-  align-items: center;
+  position: fixed;
+  display: contents;
   bottom: 0;
   left: 0;
-  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  //height: 500px;
+  border-top: 1px solid black;
 `;
 
 const FooterSection = styled.div`
@@ -43,6 +43,7 @@ const FooterSection = styled.div`
 
 const FooterCategorySection = styled.div`
   display: grid;
+  gap: 30px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   list-style: none;
   margin-left: 100px;
@@ -111,8 +112,8 @@ const FOOTER_LIST = [
 ];
 
 const FOOTER_IMG_LIST = [
-  { id: 1, alt: '인스타그램 이미지', img: './images/Footer/instagram(2).png' },
-  { id: 2, alt: '틱톡 이미지', img: './images/Footer/tiktok.png' },
-  { id: 3, alt: '트위터 이미지', img: './images/Footer/twitter.png' },
-  { id: 4, alt: '유튜브 이미지', img: './images/Footer/youtube.png' },
+  { id: 1, alt: '인스타그램 이미지', img: '/images/Footer/instagram(2).png' },
+  { id: 2, alt: '틱톡 이미지', img: '/images/Footer/tiktok.png' },
+  { id: 3, alt: '트위터 이미지', img: '/images/Footer/twitter.png' },
+  { id: 4, alt: '유튜브 이미지', img: '/images/Footer/youtube.png' },
 ];
