@@ -4,15 +4,14 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import LastPage from '../../assets/images/LastPage.png';
 
-const Viewer = () => {
+const Viewer = props => {
+  const { viewerData, closeViewer } = props;
   const [page, setPage] = useState(1);
-  const [part, setPart] = useState();
+  const [part, setPart] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPart, setCurrentPart] = useState(0);
 
   const sliderRef = useRef();
-
-  console.log(sliderRef);
 
   useEffect(() => {
     const time = setTimeout(() => {
@@ -49,41 +48,45 @@ const Viewer = () => {
     },
   };
 
-  console.log(page);
-  console.log(currentPart);
-
   const firstPage = () => {
     alert('첫번째 페이지입니다.');
   };
 
+  const comparePart = () => {
+    if (currentPart + 1 === part.volumes.at(-1).sequence) {
+      return alert('마지막 권입니다.');
+    } else {
+      return setCurrentPart(currentPart + 1);
+    }
+  };
+
   const toNextPart = () => {
     window.confirm('다음 권을 열람하시겠습니까?')
-      ? setCurrentPart(currentPart + 1)
+      ? comparePart()
       : setPage(page);
   };
 
   useEffect(() => {
-    fetch('/data/viewerData.json')
-      .then(res => res.json())
-      .then(data => {
-        setPart(data.data[currentPart]);
-        setLoading(false);
-      });
+    setPart(viewerData.data[currentPart]);
+    setLoading(false);
   }, []);
 
-  if (loading) return <div>loading...</div>;
+  if (loading) {
+    return <div>loading...</div>;
+  }
+
   return (
     <>
-      <CloseButton>╳</CloseButton>
+      <CloseButton onClick={closeViewer}>╳</CloseButton>
       <Modal>
         <Section>
           <Title>{part.title}</Title>
           <PartList>
             {part.volumes.map(({ name, pages, sequence }) => {
               return (
-                <React.Fragment key={name}>
+                <React.Fragment key={pages}>
                   <Part value={sequence} onClick={bookNum}>
-                    {name}
+                    {sequence}권
                   </Part>
                   {currentPart === sequence - 1 &&
                     pages.map(({ id, name, sequence }) => {

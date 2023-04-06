@@ -11,5 +11,5 @@ export const APIS = {
   recommend: `${BOOK_API}/recomlist`,
   review: `${BASE_URL}/reviews`,
   bookcase: `${BASE_URL}/librarys`,
-  viewer: `${BASE_URL}/viewer`,
+  viewer: `${BASE_URL}/viewers`,
 };

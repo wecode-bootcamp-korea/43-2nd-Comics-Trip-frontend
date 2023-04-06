@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import Category from '../../components/Category/Category';
-import Mari from '../../assets/images/IMG_1211.JPG';
+import { APIS } from '../../config';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faChevronUp } from '@fortawesome/free-solid-svg-icons';
@@ -32,11 +32,13 @@ const Main = () => {
 
   const scrollToCategory = index => {
     if (!elementScroll.current[index]) return;
-    elementScroll.current[index].scrollIntoView({ behavior: 'smooth' });
+    elementScroll.current[index].scrollIntoView({
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/books/best')
+    fetch(APIS.best)
       .then(res => res.json())
       .then(data => {
         setRankingData(data);
@@ -45,7 +47,7 @@ const Main = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://10.58.52.95:3001/books/genre`)
+    fetch(APIS.genre)
       .then(res => res.json())
       .then(data => {
         setCategoryData(data);
@@ -85,6 +87,13 @@ const Main = () => {
           )}
         </StyledSlider>
       </BestList>
+
+      <Category
+        data={categoryData}
+        setData={setCategoryData}
+        scroll={elementScroll}
+        navigate={navigate}
+      />
       <WindowScroll>
         {categoryData.map(({ id, genre }, index) => {
           return (
@@ -96,12 +105,6 @@ const Main = () => {
           );
         })}
       </WindowScroll>
-      <Category
-        data={categoryData}
-        setData={setCategoryData}
-        scroll={elementScroll}
-        navigate={navigate}
-      />
       <ScrollTop
         onClick={() => {
           window.scrollTo({ top: 0, screenLeft: 0, behavior: 'smooth' });
@@ -117,15 +120,17 @@ const ScrollTop = styled.button`
   background-color: white;
   width: 83px;
   padding: 10px 0;
-  margin-left: 90%;
+  margin-left: 92%;
   border: 1px solid #fff;
   border-radius: 15px;
-  position: sticky;
+  position: fixed;
   bottom: 40px;
+
   &: hover {
     cursor: pointer;
     box-shadow: 0px 3px 6px #adadad;
   }
+
   &: active {
     box-shadow: inset 0px 3px 6px #adadad;
   }
@@ -136,10 +141,16 @@ const Best = styled.strong`
 `;
 
 const WindowScroll = styled.ul`
-  position: fixed;
-  height: 200px;
-  right: 5%;
-  top: 30%;
+  /* display: inline; */
+  position: sticky;
+  top: 100px;
+  width: 83px;
+  bottom: 300px;
+  margin-left: 92%;
+
+  li {
+    display: inline;
+  }
 `;
 const ScrollButton = styled.button`
   border: 0;
@@ -156,7 +167,7 @@ const ScrollButton = styled.button`
 const BestList = styled.div`
   display: flex;
   flex-direction: column;
-  width: 1150px;
+  width: 70%;
   margin: 100px auto;
 `;
 

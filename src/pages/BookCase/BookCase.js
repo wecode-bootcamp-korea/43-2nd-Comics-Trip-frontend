@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Countdown from '../../components/Countdown/Countdown';
 import Viewer from '../../components/Viewer/Viewer';
-//import { APIS } from '../../config';
+import { APIS } from '../../config';
 import Icon from '../../components/Icon/Icon';
 import * as s from './BookCaseStyled';
 
@@ -15,14 +15,16 @@ const BookCase = () => {
   const openViewer = () => {
     setIsViewerOpen(true);
   };
+  const closeViewer = () => {
+    setIsViewerOpen(false);
+  };
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/librarys/owner', {
+    fetch(`${APIS.bookcase}/owner`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
     })
       .then(response => response.json())
@@ -33,12 +35,11 @@ const BookCase = () => {
   }, []);
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/librarys/rental', {
+    fetch(`${APIS.bookcase}/rental`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
     })
       .then(response => response.json())
@@ -53,35 +54,33 @@ const BookCase = () => {
   }
 
   const ownToViewer = index => {
-    fetch(
-      `http://10.58.52.95:3001/viewers/${ownBooksData[index].book_id}/owners`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-          Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
-        },
-      }
-    )
+    fetch(`${APIS.viewer}/own/${ownBooksData[index].book_id}/owners`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+    })
       .then(response => response.json())
-      .then(data => setViewerData(data));
+      .then(data => {
+        setViewerData(data);
+        openViewer();
+      });
   };
 
   const rentToViewer = index => {
-    fetch(
-      `http://10.58.52.95:3001/viewers/${rentBooksData[index].book_id}/rentals`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json;charset=utf-8',
-          Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
-        },
-      }
-    )
+    fetch(`${APIS.viewer}/rental/${rentBooksData[index].book_id}/rentals`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('TOKEN'),
+      },
+    })
       .then(response => response.json())
-      .then(data => setViewerData(data));
+      .then(data => {
+        setViewerData(data);
+        openViewer();
+      });
   };
 
   return (
@@ -112,7 +111,13 @@ const BookCase = () => {
             </div>
           </s.Wrapper>
         </s.WrapperWithBorder>
-        {isViewerOpen && <Viewer viewerData={viewerData} />}
+        {isViewerOpen && (
+          <Viewer
+            closeViewer={closeViewer}
+            setIsViewerOpen={setIsViewerOpen}
+            viewerData={viewerData}
+          />
+        )}
         <s.Section>
           <s.SectionTitle>구매한 작품</s.SectionTitle>
           <s.OrderList>
@@ -122,7 +127,6 @@ const BookCase = () => {
                   <s.ImgLi
                     key={book_id}
                     onClick={() => {
-                      openViewer();
                       ownToViewer(index);
                     }}
                   >
@@ -146,7 +150,6 @@ const BookCase = () => {
                   <s.RentImgLi
                     key={single_volume_id}
                     onClick={() => {
-                      openViewer();
                       rentToViewer(index);
                     }}
                   >
