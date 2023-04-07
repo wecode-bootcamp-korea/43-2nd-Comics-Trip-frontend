@@ -81,7 +81,7 @@ const Nav = () => {
     <Wrapper>
       <MainLogo
         alt="logo"
-        src="./images/Nav/ct_logo.png"
+        src="/images/Nav/ct_logo.png"
         onChange={changeInputValue}
         onClick={() => goToPages('/')}
       />
@@ -121,19 +121,19 @@ const Nav = () => {
         </WholeBox>
         <SearchIcon
           alt="search"
-          src="./images/Nav/search(1).png"
+          src="/images/Nav/search(1).png"
           onClick={() => goToPages('/allbookcase')}
         />
       </SearchSection>
       <IconAside>
         <AlarmIcon
           alt="alarm"
-          src="./images/Nav/bell.png"
+          src="/images/Nav/bell.png"
           onClick={handleAlarm}
         />
         <BookCaseIcon
           alt="bookcase"
-          src="./images/Nav/book.png"
+          src="/images/Nav/book.png"
           onClick={() => goToPages('/bookcase')}
         />
         <BookcasePoint />
@@ -156,6 +156,7 @@ const Nav = () => {
 };
 
 const Wrapper = styled.div`
+  z-index: 5;
   position: -webkit-sticky;
   position: sticky;
   display: flex;
