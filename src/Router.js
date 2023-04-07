@@ -13,6 +13,7 @@ const Router = () => {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/oauth/callback/kakao" element={<KakaoAuth />} />
         <Route path="/productdetail/:id" element={<ProductDetail />} />
         <Route path="/bookcase" element={<BookCase />} />
       </Routes>
