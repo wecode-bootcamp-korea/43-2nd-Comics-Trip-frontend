@@ -1,4 +1,4 @@
-# 43기 1차 프로젝트 : Comic's Trip 팀
+# 43기 2차 프로젝트 : Comic's Trip 팀
 <img src="https://user-images.githubusercontent.com/121225163/230452503-e3441d2e-bf70-4224-8494-355ece508941.png" width="300" />
 
 ## 구현 웹페이지
