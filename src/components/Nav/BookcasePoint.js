@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
 const BookcasePoint = () => {
   const [bookData, setBookData] = useState([]);
@@ -7,16 +7,16 @@ const BookcasePoint = () => {
   const isCheckBookcase = bookData.length >= 1;
 
   useEffect(() => {
-    fetch('./data/keepBooksData.json')
-      .then(res => res.json())
-      .then(data => setBookData(data));
+    fetch("./data/keepBooksData.json")
+      .then((res) => res.json())
+      .then((data) => setBookData(data));
   }, []);
 
   return isCheckBookcase && <RedPoint />;
 };
 
 const RedPoint = styled.div`
-  content: '',
+  content: "";
   position: absolute;
   width: 8px;
   height: 8px;

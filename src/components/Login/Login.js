@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { KAKAO_AUTH_URL } from '../../components/OAuth';
+import React from "react";
+import styled from "styled-components";
+import { KAKAO_AUTH_URL } from "../../components/OAuth";
 
-const Login = props => {
+const Login = (props) => {
   const loginKakao = () => {
     window.location.href = KAKAO_AUTH_URL;
   };
@@ -83,7 +83,7 @@ const CloseButton = styled.button`
 const LoginDescription = styled.p`
   display: flex;
   margin-bottom: 20px;
-  padding 10px;
+  padding: 10px;
   font-size: 18px;
 `;
 

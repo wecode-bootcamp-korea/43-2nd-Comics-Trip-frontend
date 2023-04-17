@@ -61,7 +61,7 @@ const Nav = () => {
   };
 
   useEffect(() => {
-    fetch('http://10.58.52.95:3001/books/search', {
+    fetch('http://52.79.248.174:3000/books/search', {
       method: 'GET',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     })

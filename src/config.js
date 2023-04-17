@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://10.58.52.95:3001';
+export const BASE_URL = 'http://52.79.248.174:3000';
 const BOOK_API = `${BASE_URL}/books`;
 
 export const APIS = {

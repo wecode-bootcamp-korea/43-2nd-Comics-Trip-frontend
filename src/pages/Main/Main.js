@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Slider from 'react-slick';
-import Category from '../../components/Category/Category';
-import { APIS } from '../../config';
-import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useEffect, useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import Category from "../../components/Category/Category";
+import { APIS } from "../../config";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar, faChevronUp } from "@fortawesome/free-solid-svg-icons";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Main = () => {
   const [rankingData, setRankingData] = useState([]);
@@ -30,17 +30,17 @@ const Main = () => {
 
   const elementScroll = useRef([]);
 
-  const scrollToCategory = index => {
+  const scrollToCategory = (index) => {
     if (!elementScroll.current[index]) return;
     elementScroll.current[index].scrollIntoView({
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   useEffect(() => {
     fetch(APIS.best)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setRankingData(data);
         setLoading(false);
       });
@@ -48,8 +48,8 @@ const Main = () => {
 
   useEffect(() => {
     fetch(APIS.genre)
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setCategoryData(data);
         setLoading(false);
       });
@@ -107,7 +107,7 @@ const Main = () => {
       </WindowScroll>
       <ScrollTop
         onClick={() => {
-          window.scrollTo({ top: 0, screenLeft: 0, behavior: 'smooth' });
+          window.scrollTo({ top: 0, screenLeft: 0, behavior: "smooth" });
         }}
       >
         <FontAwesomeIcon icon={faChevronUp} /> TOP
@@ -126,12 +126,12 @@ const ScrollTop = styled.button`
   position: fixed;
   bottom: 40px;
 
-  &: hover {
+  :hover {
     cursor: pointer;
     box-shadow: 0px 3px 6px #adadad;
   }
 
-  &: active {
+  :active {
     box-shadow: inset 0px 3px 6px #adadad;
   }
 `;
@@ -194,11 +194,11 @@ const Slide = styled.button`
   border: 0;
   border-radius: 5px;
   background-color: white;
-  &: hover {
+  :hover {
     cursor: pointer;
     box-shadow: 0px 3px 6px #adadad;
   }
-  &: active {
+  :active  {
     box-shadow: inset 0px 3px 6px #adadad;
   }
 `;
