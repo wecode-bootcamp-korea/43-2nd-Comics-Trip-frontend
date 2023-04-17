@@ -18,8 +18,7 @@ const BookList = ({ title, bookList }) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
     })
       .then(response => response.json())
@@ -31,8 +30,7 @@ const BookList = ({ title, bookList }) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
     })
       .then(response => response.json())
@@ -74,8 +72,7 @@ const BookList = ({ title, bookList }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
       body: JSON.stringify({
         type: 'owner_price',
@@ -98,8 +95,7 @@ const BookList = ({ title, bookList }) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
       body: JSON.stringify({
         type: 'rental_price',

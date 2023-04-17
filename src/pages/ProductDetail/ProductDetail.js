@@ -52,8 +52,7 @@ const ProductDetail = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8',
-          Authorization:
-            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+          Authorization: localStorage.getItem('TOKEN'),
         },
         body: JSON.stringify({
           bookId: params.id,
@@ -86,8 +85,7 @@ const ProductDetail = () => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
-        Authorization:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxLCJpYXQiOjE2ODA2OTgyNzB9.gzl0wRAtIycPuMrSe0cyP4LRacwOJ8GLvAgWrRChq_M',
+        Authorization: localStorage.getItem('TOKEN'),
       },
     }).then(response => {
       if (!response.ok) {
